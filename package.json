@@ -1,8 +1,14 @@
 {
-  "name": "shush",
+  "name": "@phukon/shush",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
@@ -10,7 +16,15 @@
     "preversion": "npm run build",
     "postversion": "git push --tags"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phukon/shush.git"
+  },
+  "keywords": [
+    "warnings",
+    "suppress",
+    "utility"
+  ],
   "author": "Riki Phukon",
   "license": "MIT",
   "devDependencies": {
@@ -19,5 +33,9 @@
     "semantic-release": "^24.2.9",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
