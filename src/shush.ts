@@ -25,7 +25,7 @@ function isWarningSuppressed(message: string): boolean {
  * Installs the warning interceptor and sets the supression rules
  * @param rules An array of strings or regular expressions to match against warning messages
  */
-export function supressWarnings(rules: SuppressionRule[] = []): void {
+export function suppressWarnings(rules: SuppressionRule[] = []): void {
   if (Array.isArray(rules)) {
     supressionRules = rules.filter(
       (rule): rule is SuppressionRule =>
@@ -65,6 +65,6 @@ export function restoreWarnings(): void {
 }
 
 export default {
-  supressWarnings,
+  suppressWarnings,
   restoreWarnings,
 };

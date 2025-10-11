@@ -1,2 +1,2 @@
-import { supressWarnings, restoreWarnings } from "./shush";
-export { supressWarnings, restoreWarnings };
+import { suppressWarnings, restoreWarnings } from "./shush";
+export { suppressWarnings, restoreWarnings };
