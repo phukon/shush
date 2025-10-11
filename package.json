@@ -28,6 +28,7 @@
   "author": "Riki Phukon",
   "license": "MIT",
   "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
     "@types/node": "^24.7.2",
     "rimraf": "^6.0.1",
     "semantic-release": "^24.2.9",
