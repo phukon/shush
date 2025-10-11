@@ -2,14 +2,14 @@ type SuppressionRule = string | RegExp;
 
 // storing a ref to the original function to restore later
 const originalWarning: typeof process.emitWarning = process.emitWarning;
-let supressionRules: SuppressionRule[] = [];
+let suppressionRules: SuppressionRule[] = [];
 
 function isWarningSuppressed(message: string): boolean {
-  if (!message || supressionRules.length === 0) return false;
+  if (!message || suppressionRules.length === 0) return false;
 
   const messageLower = message.toLowerCase();
 
-  for (const rule of supressionRules) {
+  for (const rule of suppressionRules) {
     if (typeof rule === "string") {
       // checking simple string inclusion (case insensitive)
       if (messageLower.includes(rule.toLowerCase())) return true;
@@ -27,11 +27,11 @@ function isWarningSuppressed(message: string): boolean {
  */
 export function suppressWarnings(rules: SuppressionRule[] = []): void {
   if (Array.isArray(rules)) {
-    supressionRules = rules.filter(
+    suppressionRules = rules.filter(
       (rule): rule is SuppressionRule =>
         typeof rule === "string" || rule instanceof RegExp,
     );
-  } else supressionRules = [];
+  } else suppressionRules = [];
 
   // only override if we haven't already
 
@@ -61,7 +61,7 @@ export function suppressWarnings(rules: SuppressionRule[] = []): void {
 
 export function restoreWarnings(): void {
   process.emitWarning = originalWarning;
-  supressionRules = [];
+  suppressionRules = [];
 }
 
 export default {
