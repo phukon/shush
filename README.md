@@ -1,4 +1,10 @@
-# Shush
+<div align="center">
+  
+![logo](https://github.com/user-attachments/assets/eccaea76-36b4-4e42-b7de-c20d1b7ea980)
+
+*(shush!)*
+
+</div>
 
 A lightweight utility for Node.js projects to selectively suppress unwanted runtime warnings originating from dependencies or older code. This is particularly useful for dealing with "punnycode is deprecated" or similar warnings that you cannot fix directly.
 
